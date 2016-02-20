@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang=ru>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+		<title>Test</title>
+		<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+		<meta content="telephone=no" name="format-detection">
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'urlparse/css/reset.css' %}" />
+		<link rel="stylesheet" href="{% static 'urlparse/css/style.css' %}" />
+		<script src="{% static 'urlparse/js/jquery-2.1.4.min.js' %}" /></script>
+		<script src="{% static 'urlparse/js/app.js' %}" /></script>
+		<!-- HTML5 IE support -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+<body>
+	<header>
+		<h1>Test</h1>
+	</header>
+	<section id="content" data-token="{{ csrf_token }}">
+		<div class="content__textarea"><label for="status" class="content__textarea__label">Status</label><textarea name="status" id="status" class="js__status" cols="30" rows="10"></textarea></div>
+		<div class="content__textarea"><label for="result" class="content__textarea__label">Result</label><textarea name="result" id="result" class="js__result" cols="30" rows="10"></textarea></div>
+		<div class="content__textarea js__url--list"></div>
+		<div class="content__textarea"><button class="js__start">Start</button></div>
+		<div class="content__textarea"><button class="js__stop">Stop</button></div>
+	</section>
+</body>
+</html>

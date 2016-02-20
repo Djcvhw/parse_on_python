@@ -1,0 +1,6 @@
+INSERT INTO table4 [`internalnumber`, `name/surname`, `position`, `salary/month`, `tax`, `month`]
+SELECT table3.`internalnumber`, CONCAT(table1.`name`, table1.`surname`) as `name/surname`, table3.`position`, table1.`salary/year`/12 as `salary/month`, table2.`taxes` as tax, table2.`month`
+FROM table1 
+LEFT JOIN table3 ON table1.`id`=table3.`employeeid` 
+LEFT JOIN table2 ON table1.`id`=table2.`employeeid` 
+GROUP BY table1.`id`
